@@ -1,14 +1,14 @@
-# oyd-exercise-4-2 — Orders Service Remote State Migration
+# oyd-exercise-4-2 — Migración de Estado Remoto del Servicio de Órdenes
 
-Terraform workspace migrated from local state to S3 remote backend with DynamoDB locking.
+Workspace de Terraform migrado de estado local a backend remoto en S3 con bloqueo mediante DynamoDB.
 
-- **State bucket:** `isabelpp-orders-tfstate`
-- **Lock table:** `isabelpp-orders-locks`
-- **State key:** `orders/terraform.tfstate`
+- **Bucket de estado:** `isabelpp-orders-tfstate`
+- **Tabla de bloqueo:** `isabelpp-orders-locks`
+- **Llave del estado:** `orders/terraform.tfstate`
 
-## Evidence
+## Evidencia
 
-### terraform state list (after migration)
+### terraform state list (después de la migración)
 
 ```
 aws_s3_bucket.order_attachments
@@ -20,6 +20,6 @@ aws_s3_bucket.order_attachments
 2026-05-14 20:04:43       2954 terraform.tfstate
 ```
 
-### Lock contention (Terminal 2 error while Terminal 1 apply was running)
+### Contención de bloqueo (error en Terminal 2 mientras Terminal 1 seguía ejecutando el apply)
 
-![Lock contention error](evidence/lock-contention.png)
+![Error de contención de bloqueo](evidence/lock-contention.png)
