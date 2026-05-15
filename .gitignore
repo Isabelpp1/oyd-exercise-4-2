@@ -1,0 +1,6 @@
+# Local Terraform state — never commit
+terraform.tfstate
+terraform.tfstate.backup
+
+# Terraform working directories
+.terraform/
